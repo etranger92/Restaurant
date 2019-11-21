@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { NavLink, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Scrollchor from "react-scrollchor";
 
 class Navigator extends Component {

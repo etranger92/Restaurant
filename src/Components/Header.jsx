@@ -1,9 +1,7 @@
 import React from "react";
 import { Component } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "../Sass/App.scss";
-import Navigator from "./Navigator";
 import picture1 from "../images/Headers/picture1.jpeg";
 import picture2 from "../images/Headers/picture2.jpg";
 import picture3 from "../images/Headers/picture3.jpeg";
@@ -47,8 +45,7 @@ class Header extends Component {
 
   changeIndice = () => {
     let { indice, presentations } = this.state;
-    let pictureLength = presentations.length - 1;
-    let updateIndice = indice < pictureLength ? indice++ : (indice = 0);
+
     this.setState({
       indice: indice
     });
@@ -61,7 +58,6 @@ class Header extends Component {
       indiceOpacity: true
     });
   };
-  changeIcones = () => {};
 
   componentDidMount() {
     var interVal = setInterval(this.changeIndice, 5000);

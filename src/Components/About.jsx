@@ -35,16 +35,19 @@ class About extends Component {
 
   handleScroll = () => {
     var titleTable = document.getElementById("table-title");
-
     var positionTitle = titleTable
       ? titleTable.getBoundingClientRect().top
       : false;
 
-    var screenPosition = window.innerHeight;
+    var screenPosition = window.innerHeight / 1.2;
 
     if (positionTitle && positionTitle < screenPosition) {
       this.setState({
         classIndice: true
+      });
+    } else {
+      this.setState({
+        classIndice: false
       });
     }
   };
@@ -105,7 +108,7 @@ class About extends Component {
         <div className={"our_restaurant"}>
           <h1
             id="table-title"
-            className={this.state.classIndice ? "appear_effect" : ""}
+            className={this.state.classIndice ? "appear_title" : ""}
           >
             {" "}
             Our tables

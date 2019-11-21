@@ -14,7 +14,6 @@ html {
   0% {
     width: 130vw;
     opacity: 1;
-
   }
 
   100% {
@@ -43,6 +42,23 @@ html {
   }
 }
 
+@keyframes appearMenu {
+  0% {
+    opacity: 0;
+
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes appearPicsHeader {
   0% {
     opacity: 0;
@@ -57,40 +73,98 @@ html {
   }
 }
 
-
-
-@keyframes rightToLeft {
-  0% {
-    left: 100%;
-    opacity: 1;
-    width: 1px;
-
-
-  }
-
-  100% {
-    left: 0%;
-    opacity: 1;
-  }
-}
-
-@keyframes leftToRight {
+@keyframes topStartOne {
   0% {
     height: 0%;
-    background-color: $secondary;
-    width: 100%;
     opacity: 1;
+    width: 100%;
   }
 
   100% {
     height: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes topStartTwo {
+  0% {
+    top: 0%;
     width: 100%;
     opacity: 1;
-    background-color: $secondary;
+  }
+
+  100% {
+    top: 100%;
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes textAppear {
+  0% {
+    top: 120px;
+    opacity: 0;
+
+  }
+
+  100% {
+    top: 0px;
+    opacity: 1;
+
+
+  }
+}
+
+@keyframes effectBordurLeftRight {
+  0% {
+    width: 0%;
+    opacity: 1;
+
+  }
+
+  100% {
+    width: 100%;
+    opacity: 1;
+
+
+  }
+}
+
+@keyframes effectPresentationLeftRight {
+  0% {
+    width: 0%;
+    opacity: 1;
+    height: 2px;
+
+  }
+
+  100% {
+    width: 100%;
+    height: 2px;
+    opacity: 1;
   }
 }
 
 //Class
+
+//class shared
+.appear_title {
+  animation: appearOnTheScreen 1s ease-in-out forwards;
+  width: auto;
+  margin-left: 1rem;
+  position: relative;
+
+
+  &:after {
+    content: "";
+    border-bottom: 2px solid black;
+    position: absolute;
+    top: 3rem;
+    left: 0rem;
+    opacity: 0px;
+    animation: effectBordurLeftRight 1s ease-out 1s forwards;
+  }
+}
 
 //Header
 .effect_header {
@@ -137,26 +211,6 @@ html {
   animation: picOnMove 20s linear infinite;
 }
 
-.opacity_container {
-  opacity: 1 !important;
-  position: relative;
-  background-color: $backgroundCart;
-  grid-column: 2/8;
-
-  &:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background-color: grey;
-    position: absolute;
-    animation: leftToRight 0.5s linear,
-      rightToLeft 1s ease-in 0.5s;
-    z-index: 2;
-  }
-}
-
-
 //NavBar
 .nav_link {
   text-decoration: none;
@@ -186,7 +240,6 @@ html {
 }
 
 //Menus
-
 .menu_hover {
   &:hover {
     transform: scale(1.05);
@@ -194,14 +247,63 @@ html {
   }
 }
 
+.appear_title_effect {
+  animation: appearOnTheScreen 2s ease-in-out forwards 3.8s;
+}
+
+.cart_presentation_effect {
+
+  animation: effectPresentationLeftRight 1s ease-in-out forwards, topStartOne 3s linear 1s forwards;
+
+
+}
+
+.menu_effect {
+  animation: textAppear 0.5s ease-in-out forwards;
+
+  &:nth-child(2) {
+    animation-delay: 0.7s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.9s;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 1.1s;
+  }
+}
+
 //Gallery
+.meal_pic_effect {
+  animation: textAppear 0.2s ease-in-out forwards;
+
+  &:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+
+  &:nth-child(5) {
+    animation-delay: 1s;
+  }
+
+  &:nth-child(6) {
+    animation-delay: 1.2s;
+  }
+}
 
 body {
   width: 100vw;
   background-color: #f5f4ed;
 
   #root {
-
     .nav_desktop {
       display: block;
 
@@ -211,6 +313,7 @@ body {
         list-style: none;
         position: fixed;
         height: 10vh;
+        z-index: 100;
 
 
         li {
@@ -230,7 +333,6 @@ body {
       display: none;
       height: 15vh;
       background-color: $secondary;
-
       opacity: 0.4;
       position: relative;
 
@@ -247,13 +349,12 @@ body {
         right: 1rem;
         height: 3rem;
         top: 0.5rem;
-        border: 1px solid black;
         z-index: 20;
         margin-top: 1rem;
         justify-content: center;
 
         span {
-          border-top: 8px solid white;
+          border-top: 8px solid $secondary;
           border-radius: 4px;
           margin-bottom: 6px;
           width: 7vw;
@@ -289,7 +390,6 @@ body {
       width: 100vw;
       position: relative;
       overflow: hidden;
-
 
       .headerSlider {
         top: 0px;
@@ -344,8 +444,6 @@ body {
     }
 
     .about_section {
-
-
       .about {
         height: 70vh;
         background-color: #f5f4ed;
@@ -359,28 +457,32 @@ body {
 
         p {
           width: 70vh;
-          line-height: 1.4rem;
+          line-height: 1.9rem;
           font-family: "Playfair Display", serif;
+          text-align: justify;
+          text-justify: inter-word;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
       }
 
       .our_restaurant {
         @include flexDisplay(row, center);
-        margin-top: 1rem;
+        flex-wrap: wrap;
         height: 70vh;
         align-items: center;
         position: relative;
 
         img {
-          width: 90vw;
+          width: 80vw;
           height: 60vh;
           opacity: 0;
-          margin-top: 4rem;
+          margin-top: 5rem;
         }
 
         h1 {
           position: absolute;
           top: 0;
+          left: 0;
           opacity: 0;
           text-align: left;
           color: black;
@@ -388,39 +490,72 @@ body {
             cursive;
           letter-spacing: 2px;
           font-size: 3rem;
-        }
 
-        span {
-          width: auto;
-          color: $secondary;
-          margin-left: 1rem;
-          margin-right: 1rem;
         }
+      }
+
+      span {
+        width: auto;
+        color: $secondary;
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  #Menus {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: auto;
+
+    .main_cart_presentation {
+      grid-column: 1/2;
+      background-color: #f5f4ed;
+      top: 2rem;
+      display: flex;
+      position: relative;
+      border-radius: 5px;
+      -webkit-box-shadow: 6px -1px 5px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 6px -1px 5px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 6px -1px 5px 0px rgba(0, 0, 0, 0.75);
+      right: 1rem;
+      opacity: 0;
+
+      h1 {
+        line-height: 40px;
+        opacity: 0;
+        white-space: nowrap;
+        position: absolute;
+        left: -70%;
+        top: 50%;
+        font-size: 7rem;
+        transform-origin: top right 0;
+        transform: rotate(270deg);
+        color: pink;
+        font-family: 'Great Vibes',
+          cursive;
+
       }
     }
 
-    #Menus {
-      margin-top: 2rem;
-
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-auto-rows: auto;
+    .container_cart {
+      grid-column: 2/8;
 
 
 
-      .cart,
-      .opacity_container {
+      .cart {
         background-color: #f5f4ed;
-        grid-column: 2/8;
+
 
         .container {
           @include flexDisplay(row, center);
           position: relative;
+          opacity: 0;
 
           h1 {
             margin-top: 2rem;
             position: absolute;
-
 
             &:after {
               content: "";
@@ -436,224 +571,255 @@ body {
           .menus {
             margin-top: 4rem;
 
+
             div {
               margin-top: 2rem;
+
             }
           }
         }
       }
     }
+  }
 
-    .gallery_section {
-      margin-top: 2rem;
-      position: relative;
+  .gallery_section {
+    margin-top: 4rem;
+    position: relative;
 
-      h1 {
-        font-family: 'Great Vibes',
-          cursive;
-        letter-spacing: 2px;
-        font-size: 3rem;
-      }
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      text-align: left;
+      color: black;
+      font-family: 'Great Vibes',
+        cursive;
+      letter-spacing: 2px;
+      font-size: 3rem;
+    }
 
-      .meal_container {
-        @include flexDisplay(row, center);
-        flex-wrap: wrap;
+    .meal_container {
+      @include flexDisplay(row, center);
+      flex-wrap: wrap;
 
+      figure {
+        width: 28vw;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        margin-top: 5rem;
+        position: relative;
+        opacity: 0;
 
+        img {
+          width: 100%;
+          height: 50vh;
+        }
 
-        figure {
-          width: 28vw;
-          margin-right: 2rem;
-          margin-left: 2rem;
-          margin-top: 1rem;
-          position: relative;
+        div {
+          background-color: $secondary;
+          opacity: 0.5;
+          padding-top: -3rem;
+          position: absolute;
+          bottom: -4px;
+          height: 2.5rem;
+          text-align: center;
 
-          img {
-            width: 100%;
-            height: 50vh;
-          }
-
-          div {
-            background-color: $secondary;
-            opacity: 0.5;
-            padding-top: -3rem;
-            position: absolute;
-            bottom: -4px;
-            height: 2.5rem;
-            text-align: center;
-
-            p {
-              opacity: 1;
-              color: white;
-              font-weight: bold;
-            }
-          }
-
-          ul {
-            li {
-              margin-left: 1rem;
-            }
+          p {
+            opacity: 1;
+            color: white;
+            font-weight: bold;
           }
         }
-      }
 
-      .picture_big {
-        position: fixed;
-        z-index: 3;
-        width: 100vw;
-        height: 95vh;
-        margin-top: 0rem;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: white;
-        top: 3rem;
-
-        .content_pic {
-          width: 90%;
-          margin-left: auto;
-          margin-right: auto;
-          margin-top: 7rem;
-          border: 2px solid $secondary;
-
-          span {
-            position: absolute;
-            left: 95%;
-            top: 3rem;
-            font-style: 4rem;
-            color: $secondary;
-            width: auto;
-          }
-
-          img {
-            border: 1px solid $secondary;
-            width: 100%;
-            height: 70vh;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        ul {
+          li {
+            margin-left: 1rem;
           }
         }
       }
     }
 
-    .contact {
-      margin-top: 2rem;
-      height: auto;
+    .picture_big {
+      position: fixed;
+      z-index: 3;
+      width: 100vw;
+      height: 95vh;
+      margin-top: 0rem;
       margin-left: auto;
       margin-right: auto;
-      position: relative;
-      border: 1px solid #f5f4ed;
-      ;
+      background-color: white;
+      top: 3rem;
 
-      .title_contact {
+      .content_pic {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 7rem;
+        border: 2px solid $secondary;
 
-        position: absolute;
-        top: 0px;
-        left: 50%;
-        width: 10rem;
-        margin-left: -5rem;
-
-        h1 {
-          font-size: 2rem;
+        span {
+          position: absolute;
+          left: 95%;
+          top: 3rem;
+          font-style: 4rem;
+          color: $secondary;
+          width: auto;
         }
 
-        p {
-          font-family: Dancing Script, cursive;
+        img {
+          border: 1px solid $secondary;
+          width: 100%;
+          height: 70vh;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
         }
+      }
+    }
+  }
+
+  .contact {
+    margin-top: 2rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border: 1px solid #f5f4ed;
 
 
+    .title_contact {
 
+      position: absolute;
+      top: 0px;
+      width: 20rem;
+      left: 0px;
+      right: 0px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+
+      h1 {
+        font-size: 2rem;
       }
 
-      .contact_details {
-        @include flexDisplay(row, space-around);
-        margin-top: 5rem;
-        margin-left: 2rem;
-
-        form {
-          width: 40rem;
-
-          div {
-            margin-top: 2rem;
-            position: relative;
-
-            input {
-              height: 2rem;
-              border-radius: 3px;
-            }
-
-
-            .error_message {
-              margin-top: 0rem;
-              position: absolute;
-              width: auto;
-              top: 2.3rem;
-              background-color: $secondary;
-              color: white;
-              animation: appearOnTheScreen 1s ease-in-out;
-              border-radius: 2px;
-
-            }
-
-          }
-
-          .message_from_user {
-            textarea {
-              height: 30vh;
-              border-radius: 3px;
-            }
-          }
-
-        }
-
-        .address_hours {
-          width: 40vw;
-          margin-left: 5rem;
-
-          div {
-            margin-top: 2rem;
-
-            p {
-              line-height: 1.5rem;
-              margin-left: 0px;
-
-
-            }
-          }
-
-
-        }
-
+      p {
+        font-family: Dancing Script, cursive;
       }
-
-
 
     }
+
+    .contact_details {
+      @include flexDisplay(row, center);
+      flex-wrap: wrap;
+      margin-top: 7rem;
+      margin-left: auto;
+      margin-right: auto;
+
+      form {
+        width: 40rem;
+
+        div {
+          margin-top: 2rem;
+          position: relative;
+
+          input {
+            height: 2rem;
+            border-radius: 3px;
+          }
+
+
+          .error_message {
+            margin-top: 0rem;
+            position: absolute;
+            width: auto;
+            top: 2.3rem;
+            background-color: $secondary;
+            color: white;
+            animation: appearOnTheScreen 1s ease-in-out;
+            border-radius: 2px;
+
+          }
+
+        }
+
+        .message_from_user {
+          textarea {
+            height: 30vh;
+            border-radius: 3px;
+          }
+        }
+
+      }
+
+      .address_hours {
+        width: 40vw;
+        text-align: center;
+
+        div {
+          margin-top: 2rem;
+
+          p {
+            line-height: 1.5rem;
+            margin-left: 0px;
+
+
+          }
+        }
+
+
+      }
+
+    }
+
+
 
   }
 
+
   @media only screen and (max-width: 800px) {
-    .nav_desktop {
-      display: none;
-    }
+    #root {
+      .nav_desktop {
+        display: none;
+      }
 
-    .nav_mobile {
-      display: block;
-    }
+      .nav_mobile {
+        display: block;
+        height: 0vh;
 
-    .about_section {
-      .about {
-        margin-top: 3rem;
-        @include flexDisplay(column, space-around);
-        height: auto;
+      }
 
-        img {
-          margin-top: -3rem;
+      .about_section {
+        .about {
+          margin-top: 4rem;
+          @include flexDisplay(column, space-around);
+          height: auto;
+
+          img {
+            margin-top: -3rem;
+
+          }
+
+          p {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+          }
         }
 
-        p {
-          margin-top: 2rem;
-          margin-bottom: 2rem;
+
+      }
+
+      #Menus {
+
+        .main_cart_presentation,
+        .cart_presentation_effect {
+          box-shadow: 0px 0px;
+          animation: effectPresentationLeftRight 0s ease-in-out forwards,
+            topStartOne 0s linear 0s forwards;
+
+          .appear_title_effect {
+            display: none;
+          }
         }
       }
     }

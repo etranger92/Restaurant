@@ -27,6 +27,9 @@ class App extends Component {
       <
       Navigator / >
       <
+      Home / >
+
+      <
       Route path = "/home"
       component = {
         Home
@@ -56,8 +59,7 @@ class App extends Component {
       component = {
         Menus
       }
-      /> < /
-      BrowserRouter >
+      />  </BrowserRouter >
     );
   }
 }

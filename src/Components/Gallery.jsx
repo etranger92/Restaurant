@@ -101,9 +101,36 @@ class Gallery extends Component {
       ],
       onHover: false,
       elementID: "",
+      classIndice: false,
       onClick: false
     };
   }
+
+  handleScroll = () => {
+    var pic = document.getElementById("meal1");
+    var positionPic = pic ? pic.getBoundingClientRect().top : false;
+    var screenPosition = window.innerHeight / 1.3;
+
+    if (positionPic && positionPic < screenPosition) {
+      this.setState({
+        classIndice: true,
+        classTitle: true
+      });
+    } else {
+      this.setState({
+        classIndice: false,
+        classTitle: false
+      });
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll, true);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
   closePicture = () => {
     this.setState({
       onClick: !this.state.onClick
@@ -114,7 +141,6 @@ class Gallery extends Component {
       onClick: !this.state.onClick
     });
   };
-
   paragraphAppear = ID => {
     this.setState({
       onHover: !this.state.onHover,
@@ -128,10 +154,15 @@ class Gallery extends Component {
     );
     return (
       <section id="Gallery" className="gallery_section">
-        <h1> Some pics of our plats</h1>
+        <h1 className className={this.state.classTitle ? "appear_title" : ""}>
+          {" "}
+          Some pics of our plats
+        </h1>
         <div className={"meal_container"}>
           {this.state.meals.map((element, index) => (
             <figure
+              className={this.state.classIndice ? "meal_pic_effect" : ""}
+              id={element.id}
               key={element.id}
               onMouseOver={() => this.paragraphAppear(element.id)}
               onMouseOut={() => this.paragraphAppear(element.id)}

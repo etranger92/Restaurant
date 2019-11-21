@@ -7,11 +7,6 @@ import Gallery from "./Gallery";
 import Contact from "./Contact";
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
     return (
       <section id="Home">
