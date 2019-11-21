@@ -45,10 +45,16 @@ class Header extends Component {
 
   changeIndice = () => {
     let { indice, presentations } = this.state;
-
-    this.setState({
-      indice: indice
-    });
+    indice++;
+    if (indice < this.state.presentations.length) {
+      this.setState({
+        indice: indice
+      });
+    } else {
+      this.setState({
+        indice: 0
+      });
+    }
   };
 
   selectPicture = id => {
@@ -107,6 +113,8 @@ class Header extends Component {
   }
 }
 // Qui te permet de recuperer tes données
+
+// I did not use redux as I had some trouble with imgs. Because picture1 was not imported, it was compulsory to write it as a string. And here, it does not work when you want to refere it. So, I did not want to bother that much with it as my main point was to know how to set up redux.
 const mapStateToProps = state => {
   return {
     images: state.imageHeader
