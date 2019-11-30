@@ -96,5 +96,4 @@ class Navigator extends Component {
     );
   }
 }
-
 export default Navigator;

@@ -82,20 +82,16 @@ class Menus extends Component {
   render() {
     return (
       <section id="Menus">
-        <div
+        <h1
           className={
-            "main_cart_presentation" +
+            "menu_title" +
             " " +
-            (this.state.classTitle ? "cart_presentation_effect" : "")
+            (this.state.ID1 == "menu-part1" ? "appear_title" : " ")
           }
         >
-          <h1 className={this.state.classTitle ? "appear_title_effect" : ""}>
-            {" "}
-            Our menu
-          </h1>
-          <div className="scroll_cart"> </div>{" "}
-        </div>
-
+          {" "}
+          Our menu
+        </h1>
         <div className="container_cart">
           <div className="cart">
             <div

@@ -156,7 +156,7 @@ class Gallery extends Component {
       <section id="Gallery" className="gallery_section">
         <h1 className className={this.state.classTitle ? "appear_title" : ""}>
           {" "}
-          Some pics of our plats
+          Some pics
         </h1>
         <div className={"meal_container"}>
           {this.state.meals.map((element, index) => (
@@ -204,13 +204,3 @@ class Gallery extends Component {
 }
 
 export default Gallery;
-
-// DESCRIPTION MEALS
-
-/*
-<ul>
-  {element.description.map(index => (
-    <li> {index} </li>
-  ))}
-</ul>
-  */

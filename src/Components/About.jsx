@@ -83,14 +83,15 @@ class About extends Component {
       });
     }
   };
-
   render() {
     return (
       <section id={"About"} className={"about_section"}>
         <div className={"about"}>
-          <img src={mandecorating} alt="man-decorating" />
+          <div>
+            <img src={mandecorating} alt="man-decorating" />
+          </div>
+
           <p>
-            {" "}
             <blockquote>
               {" "}
               At Bleu nuit, our celebrated chef Nabil Sba, who holds three
@@ -113,25 +114,29 @@ class About extends Component {
             {" "}
             Our tables
           </h1>
-          <span
-            onClick={this.pictureBack}
-            className={this.state.classIndice ? "appear_effect" : ""}
-          >
-            {" "}
-            <IoIosArrowBack />{" "}
-          </span>
-          <img
-            className={this.state.classIndice ? "appear_pics" : ""}
-            src={this.state.restaurant[this.state.indice].img}
-            alt={this.state.restaurant[this.state.indice].alt}
-          />
-          <span
-            onClick={this.pictureNext}
-            className={this.state.classIndice ? "appear_effect" : ""}
-          >
-            {" "}
-            <IoIosArrowForward />{" "}
-          </span>
+          <div>
+            <span
+              onClick={this.pictureBack}
+              className={this.state.classIndice ? "appear_effect" : ""}
+            >
+              {" "}
+              <IoIosArrowBack />{" "}
+            </span>
+            <div>
+              <img
+                className={this.state.classIndice ? "appear_pics" : ""}
+                src={this.state.restaurant[this.state.indice].img}
+                alt={this.state.restaurant[this.state.indice].alt}
+              />
+            </div>
+            <span
+              onClick={this.pictureNext}
+              className={this.state.classIndice ? "appear_effect" : ""}
+            >
+              {" "}
+              <IoIosArrowForward />{" "}
+            </span>
+          </div>
         </div>
       </section>
     );

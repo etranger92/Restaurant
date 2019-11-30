@@ -89,6 +89,7 @@ class Header extends Component {
             src={this.state.presentations[indice].img}
             alt={this.state.presentations[indice].alt}
           />
+
           <div>
             <h5> {this.state.presentations[indice].text}</h5>
             <ul className={"iconeSliderHeader"}>

@@ -74,6 +74,7 @@ class Contact extends Component {
             method={"post"}
             name={"registrationForm"}
             enctype={"multipart/form-data"}
+            netlify="true"
           >
             <div className={"user_name"}>
               <input
@@ -121,6 +122,9 @@ class Contact extends Component {
                 className={"text_area"}
                 onBlur={this.checkEntry}
               ></textarea>
+            </div>
+            <div>
+              <input className="submit_button" value="Send" type="submit" />{" "}
             </div>
           </form>
           <div className={"address_hours"}>
