@@ -156,7 +156,7 @@ class Gallery extends Component {
       <section id="Gallery" className="gallery_section">
         <h1 className className={this.state.classTitle ? "appear_title" : ""}>
           {" "}
-          Some pics
+          Dishes
         </h1>
         <div className={"meal_container"}>
           {this.state.meals.map((element, index) => (

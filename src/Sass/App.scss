@@ -155,13 +155,14 @@ html {
   width: auto;
   margin-left: 1rem;
   position: relative;
+  height: 5rem;
 
 
   &:after {
     content: "";
     border-bottom: 5px solid pink;
     position: absolute;
-    top: 3rem;
+    top: 3.6rem;
     left: 0rem;
     opacity: 0px;
     animation: effectBordurLeftRight 1s ease-out 1s forwards;
@@ -359,7 +360,7 @@ body {
         justify-content: center;
 
         span {
-          border-top: 8px solid $secondary;
+          border-top: 8px solid pink;
           border-radius: 4px;
           margin-bottom: 6px;
           width: 7vw;
@@ -494,11 +495,10 @@ body {
       }
 
       .our_restaurant {
-        @include flexDisplay(column, center);
-        height: 80vh;
+        @include flexDisplay(column, space-between);
+        height: 95vh;
         align-items: center;
         margin-top: 2.5rem;
-
 
         h1 {
           opacity: 0;
@@ -507,7 +507,8 @@ body {
           letter-spacing: 2px;
           font-size: 3rem;
           align-self: flex-start;
-          height: 4rem;
+          height: auto;
+          height: 5rem;
 
         }
 
@@ -518,7 +519,7 @@ body {
           justify-content: center;
           height: auto;
           height: 100%;
-          margin-top: 2.5rem;
+
 
           div {
 
@@ -526,7 +527,7 @@ body {
             height: 100%;
 
             img {
-              height: 100%;
+              height: 85%;
               width: 100%;
               opacity: 0;
             }
@@ -552,14 +553,16 @@ body {
 
       .menu_title {
         opacity: 0;
-        text-align: left;
+        text-align: center;
         color: black;
         font-family: 'Great Vibes',
           cursive;
         letter-spacing: 2px;
-        font-size: 3rem;
+        font-size: 4rem;
         align-self: flex-start;
-        height: 4rem;
+        height: 5rem;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .container_cart {
@@ -591,7 +594,8 @@ body {
 
             .menus {
               margin-top: 2.5rem;
-
+              margin-right: 0.5rem;
+              margin-left: 0.5rem;
 
               div {
                 margin-top: 2rem;
@@ -623,15 +627,15 @@ body {
         color: black;
         letter-spacing: 1px;
         font-size: 3rem;
-        width: 14rem;
+        width: 9rem;
       }
 
       .meal_container {
-        @include flexDisplay(row, center);
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1rem;
 
         figure {
-          width: 28vw;
           margin-right: 2rem;
           margin-left: 2rem;
           margin-top: 5rem;
@@ -824,27 +828,32 @@ body {
       .nav_mobile {
         display: block;
         height: 0vh;
-
       }
 
       .about_section {
         .about {
 
           @include flexDisplay(column, space-around);
-          height: 100vh;
+
 
           div {
             img {
               width: 100%;
+              flex: 2;
+
             }
           }
 
           p {
             margin-top: 2rem;
             margin-bottom: 2rem;
+
           }
         }
 
+        .our_restaurant {
+          height: 55vh;
+        }
 
       }
 
@@ -861,6 +870,23 @@ body {
           }
         }
       }
+
+      .gallery_section {
+        .picture_big {
+          top: 0rem;
+          height: 100vh;
+
+          .content_pic {
+            span {
+
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+
+        }
+      }
+
     }
   }
 
