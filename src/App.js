@@ -1,14 +1,9 @@
 import React from "react";
 import "../src/Sass/App.scss";
 //import Header from './Components/Header'
-import {
-  Component
-} from "react";
+import { Component } from "react";
 
-import {
-  BrowserRouter,
-  Route
-} from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Gallery from "./Components/Gallery";
@@ -22,44 +17,17 @@ class App extends Component {
     this.state = {};
   }
   render() {
-    return ( <
-      BrowserRouter >
-      <
-      Navigator / >
-      <
-      Home / >
-
-      <
-      Route path = "/home"
-      component = {
-        Home
-      }
-      /> <
-      Route path = "/About"
-      component = {
-        About
-      }
-      />{" "} <
-      Route path = "/Contact"
-      component = {
-        Contact
-      }
-      />{" "} <
-      Route path = "/Gallery"
-      component = {
-        Gallery
-      }
-      /> <
-      Route path = "/Header"
-      component = {
-        Gallery
-      }
-      /> <
-      Route path = "/Menus"
-      component = {
-        Menus
-      }
-      />  </BrowserRouter >
+    return (
+      <BrowserRouter>
+        <Navigator />
+        <Home />
+        <Route path="/home" component={Home} />{" "}
+        <Route path="/About" component={About} />{" "}
+        <Route path="/Contact" component={Contact} />{" "}
+        <Route path="/Gallery" component={Gallery} />{" "}
+        <Route path="/Header" component={Gallery} />{" "}
+        <Route path="/Menus" component={Menus} />{" "}
+      </BrowserRouter>
     );
   }
 }

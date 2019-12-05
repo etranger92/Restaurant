@@ -73,7 +73,7 @@ class Contact extends Component {
             action={"#"}
             method={"post"}
             name={"registrationForm"}
-            enctype={"multipart/form-data"}
+            encType={"multipart/form-data"}
             netlify="true"
           >
             <div className={"user_name"}>

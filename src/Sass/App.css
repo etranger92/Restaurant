@@ -4,7 +4,6 @@ html {
   padding: 0px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 @-webkit-keyframes picOnMove {
@@ -32,18 +31,28 @@ html {
 @-webkit-keyframes headerLift {
   0% {
     height: 0vh;
+    display: -webkit-box;
+    display: flex;
   }
   100% {
-    height: 85vh;
+    height: 100vh;
+    display: -webkit-box;
+    display: flex;
   }
 }
 
 @keyframes headerLift {
   0% {
     height: 0vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   100% {
-    height: 85vh;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -169,7 +178,7 @@ html {
     opacity: 0;
   }
   100% {
-    top: 0px;
+    top: 10px;
     opacity: 1;
   }
 }
@@ -180,7 +189,7 @@ html {
     opacity: 0;
   }
   100% {
-    top: 0px;
+    top: 10px;
     opacity: 1;
   }
 }
@@ -342,6 +351,38 @@ html {
   cursor: pointer;
 }
 
+.change span:first-child {
+  -webkit-transform: rotate(-45deg) translate(-1px, 1px);
+          transform: rotate(-45deg) translate(-1px, 1px);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 3s;
+          transition-duration: 3s;
+}
+
+.change span:nth-last-child(2) {
+  opacity: 0;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.change span:nth-child(3) {
+  -webkit-transform: rotate(10deg) translate(-7px, -8.5px);
+  transform: rotate(42deg) translate(-7px, -8.5px);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
 .appear_title_effect {
   -webkit-animation: appearOnTheScreen 2s ease-in-out forwards 3.8s;
           animation: appearOnTheScreen 2s ease-in-out forwards 3.8s;
@@ -444,7 +485,7 @@ body #root .nav_mobile {
   display: none;
   height: 15vh;
   background-color: #523a3a;
-  opacity: 0.4;
+  opacity: 1;
   position: relative;
 }
 
@@ -460,28 +501,26 @@ body #root .nav_mobile #burger {
   width: auto;
   right: 1rem;
   height: 3rem;
-  top: 0.5rem;
   z-index: 20;
-  margin-top: 1rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 body #root .nav_mobile #burger span {
-  border-top: 8px solid pink;
+  border-top: 4px solid pink;
   border-radius: 4px;
-  margin-bottom: 6px;
-  width: 7vw;
+  margin-bottom: 2px;
+  width: 5vw;
   font-weight: bold;
 }
 
 body #root .nav_mobile ul {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  display: none;
   background-color: #523a3a;
   color: white;
-  height: 85vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   -webkit-box-orient: vertical;
@@ -490,12 +529,18 @@ body #root .nav_mobile ul {
   flex-direction: column;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  display: none;
+  z-index: 10;
+  width: 100%;
 }
 
 body #root .nav_mobile ul li {
   text-align: center;
   opacity: 0;
+}
+
+body #root .nav_mobile ul li a {
+  color: white;
+  text-decoration: none;
 }
 
 body #root header {
@@ -801,7 +846,7 @@ body #root .gallery_section .meal_container {
 body #root .gallery_section .meal_container figure {
   margin-right: 2rem;
   margin-left: 2rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
   position: relative;
   opacity: 0;
 }
@@ -816,9 +861,14 @@ body #root .gallery_section .meal_container figure div {
   opacity: 0.5;
   padding-top: -3rem;
   position: absolute;
-  bottom: -4px;
   height: 2.5rem;
   text-align: center;
+  bottom: 0%;
+  width: 10em;
+  margin-left: 50;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 body #root .gallery_section .meal_container figure div p {

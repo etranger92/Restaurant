@@ -20,7 +20,6 @@ class Navigator extends Component {
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
-
   handleScroll = () => {
     window.addEventListener("scroll", () => {
       const isTop = window.scrollY > 5;
@@ -47,8 +46,6 @@ class Navigator extends Component {
               <li>
                 <Scrollchor
                   className="nav_link"
-                  activeClassName={"selected"}
-                  exact
                   to={"#" + link}
                   style={
                     this.state.isTop
@@ -64,30 +61,29 @@ class Navigator extends Component {
           </ul>
         </nav>
         <nav className="nav_mobile">
-          <div id="burger" onClick={this.handleBurger}>
+          <div
+            id="burger"
+            onClick={this.handleBurger}
+            className={this.state.burger && "change"}
+          >
             <span> </span>
             <span> </span>
             <span> </span>
           </div>
-
           <ul
-            className={this.state.burger ? "effect_header" : false}
+            className={this.state.burger && "effect_header"}
             style={{ display: this.state.burger ? "flex" : "none" }}
           >
             {navBar.map((link, index) => (
               <li
-                className={this.state.burger ? "li_effect" : false}
+                className={this.state.burger && "li_effect"}
                 key={index}
+                onClick={this.handleBurger}
               >
-                <NavLink
-                  className={"navLink"}
-                  activeClassName={"selected"}
-                  exact
-                  to={"/" + link}
-                >
+                <Scrollchor className="nav_link" to={"#" + link}>
                   {" "}
                   {link}{" "}
-                </NavLink>{" "}
+                </Scrollchor>{" "}
               </li>
             ))}
           </ul>
