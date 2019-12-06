@@ -629,7 +629,6 @@ body #root .about_section .about {
           align-items: center;
   display: flex;
   background-color: #f5f4ed;
-  height: 60vh;
   width: 90vw;
   margin-left: auto;
   margin-right: auto;
@@ -641,26 +640,28 @@ body #root .about_section .about div {
           flex: 1;
   height: 100%;
   overflow: hidden;
+  height: 60vh;
 }
 
-body #root .about_section .about div img {
-  width: 80%;
-  height: 100%;
-}
-
-body #root .about_section .about div {
+body #root .about_section .about div:nth-child(2) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: auto;
 }
 
-body #root .about_section .about div p {
+body #root .about_section .about div:nth-child(2) p {
   margin: auto;
   line-height: 1.9rem;
   font-family: "Playfair Display", serif;
   text-align: justify;
   text-justify: inter-word;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body #root .about_section .about div img {
+  width: 80%;
+  height: 100%;
 }
 
 body #root .about_section .our_restaurant {
@@ -1050,19 +1051,22 @@ body #root .contact .contact_details .address_hours div p {
     -ms-flex-pack: space-around;
     justify-content: space-around;
   }
+  body #root .about_section .about div:nth-child(2) {
+    margin-top: 1rem;
+  }
+  body #root .about_section .about div:nth-child(2) p {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
   body #root .about_section .about div img {
     width: 100%;
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;
   }
-  body #root .about_section .about div p {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
   body #root .about_section .our_restaurant {
     height: 90vh;
-    margin-top: 0px;
+    margin-top: 0rem;
   }
   body #root #Menus .main_cart_presentation,
   body #root #Menus .cart_presentation_effect {

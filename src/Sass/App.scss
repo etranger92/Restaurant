@@ -485,18 +485,33 @@ body {
         align-items: center;
         display: flex;
         background-color: #f5f4ed;
-        height: 60vh;
         width: 90vw;
-
         margin-left: auto;
         margin-right: auto;
-
 
         div {
           flex: 1;
           height: 100%;
           overflow: hidden;
+          height: 60vh;
 
+          &:nth-child(2) {
+
+            display: flex;
+            height: auto;
+
+            p {
+
+              margin: auto;
+
+              line-height: 1.9rem;
+              font-family: "Playfair Display", serif;
+              text-align: justify;
+              text-justify: inter-word;
+              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+            }
+          }
 
           img {
             width: 80%;
@@ -505,20 +520,7 @@ body {
           }
         }
 
-        div {
-          display: flex;
 
-          p {
-
-            margin: auto;
-
-            line-height: 1.9rem;
-            font-family: "Playfair Display", serif;
-            text-align: justify;
-            text-justify: inter-word;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          }
-        }
 
       }
 
@@ -871,25 +873,27 @@ body {
           @include flexDisplay(column, space-around);
 
           div {
+            &:nth-child(2) {
+              margin-top: 1rem;
+
+              p {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+
+              }
+            }
+
             img {
               width: 100%;
               flex: 2;
-
             }
           }
 
-          div {
-            p {
-              margin-top: 2rem;
-              margin-bottom: 2rem;
-
-            }
-          }
         }
 
         .our_restaurant {
           height: 90vh;
-          margin-top: 0px;
+          margin-top: 0rem;
         }
 
       }
