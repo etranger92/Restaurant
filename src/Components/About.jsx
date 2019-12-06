@@ -90,19 +90,20 @@ class About extends Component {
           <div>
             <img src={mandecorating} alt="man-decorating" />
           </div>
-
-          <p>
-            {" "}
-            At Bleu nuit, our celebrated chef Nabil Sba, who holds three
-            Michelin stars, has created a temple of gastronomy that is
-            absolutely French. His macaroni stuffed with black truffle,
-            artichoke and duck foie gras, gratinée with aged Parmesan is an
-            unforgettable dish that people travel to Paris to experience. Bleu
-            nuit restaurant can be enjoyed every day of the year, with tables
-            laid in an exquisite garden setting throughout the summer. Bleu nuit
-            has been awarded by the TripAdvisor Traveller’s Choice Awards N°2
-            Worldwide, N°1 in Europe and N°1 in France.
-          </p>
+          <div>
+            <p>
+              {" "}
+              At Bleu nuit, our celebrated chef Nabil Sba, who holds three
+              Michelin stars, has created a temple of gastronomy that is
+              absolutely French. His macaroni stuffed with black truffle,
+              artichoke and duck foie gras, gratinée with aged Parmesan is an
+              unforgettable dish that people travel to Paris to experience. Bleu
+              nuit restaurant can be enjoyed every day of the year, with tables
+              laid in an exquisite garden setting throughout the summer. Bleu
+              nuit has been awarded by the TripAdvisor Traveller’s Choice Awards
+              N°2 Worldwide, N°1 in Europe and N°1 in France.
+            </p>
+          </div>
         </div>
         <div className={"our_restaurant"}>
           <h1

@@ -648,12 +648,14 @@ body #root .about_section .about div img {
   height: 100%;
 }
 
-body #root .about_section .about p {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-left: auto;
-  margin-right: auto;
+body #root .about_section .about div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #root .about_section .about div p {
+  margin: auto;
   line-height: 1.9rem;
   font-family: "Playfair Display", serif;
   text-align: justify;
@@ -729,7 +731,6 @@ body #root .about_section .our_restaurant div span {
 }
 
 body #root #Menus {
-  margin-top: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -926,6 +927,8 @@ body #root .contact {
   margin-right: auto;
   position: relative;
   border: 1px solid #f5f4ed;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 body #root .contact .title_contact {
@@ -1035,6 +1038,7 @@ body #root .contact .contact_details .address_hours div p {
     height: 0vh;
   }
   body #root .about_section .about {
+    height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1052,12 +1056,13 @@ body #root .contact .contact_details .address_hours div p {
         -ms-flex: 2;
             flex: 2;
   }
-  body #root .about_section .about p {
+  body #root .about_section .about div p {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
   body #root .about_section .our_restaurant {
-    height: 55vh;
+    height: 90vh;
+    margin-top: 0px;
   }
   body #root #Menus .main_cart_presentation,
   body #root #Menus .cart_presentation_effect {
@@ -1082,7 +1087,7 @@ body #root .contact .contact_details .address_hours div p {
 }
 
 @media only screen and (min-width: 2000px) {
-  body #root #Home #About .about p {
+  body #root #Home #About .about div p {
     font-size: 4rem;
   }
 }

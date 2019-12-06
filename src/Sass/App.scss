@@ -505,15 +505,19 @@ body {
           }
         }
 
-        p {
-          flex: 1;
-          margin-left: auto;
-          margin-right: auto;
-          line-height: 1.9rem;
-          font-family: "Playfair Display", serif;
-          text-align: justify;
-          text-justify: inter-word;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        div {
+          display: flex;
+
+          p {
+
+            margin: auto;
+
+            line-height: 1.9rem;
+            font-family: "Playfair Display", serif;
+            text-align: justify;
+            text-justify: inter-word;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          }
         }
 
       }
@@ -571,7 +575,7 @@ body {
     }
 
     #Menus {
-      margin-top: 5rem;
+
       @include flexDisplay(column, center);
       align-items: center;
 
@@ -746,6 +750,9 @@ body {
       margin-right: auto;
       position: relative;
       border: 1px solid #f5f4ed;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+
 
 
       .title_contact {
@@ -860,7 +867,7 @@ body {
 
       .about_section {
         .about {
-
+          height: auto;
           @include flexDisplay(column, space-around);
 
           div {
@@ -871,15 +878,18 @@ body {
             }
           }
 
-          p {
-            margin-top: 2rem;
-            margin-bottom: 2rem;
+          div {
+            p {
+              margin-top: 2rem;
+              margin-bottom: 2rem;
 
+            }
           }
         }
 
         .our_restaurant {
-          height: 55vh;
+          height: 90vh;
+          margin-top: 0px;
         }
 
       }
@@ -917,14 +927,15 @@ body {
     }
   }
 
-
   @media only screen and (min-width: 2000px) {
     #root {
       #Home {
         #About {
           .about {
-            p {
-              font-size: 4rem;
+            div {
+              p {
+                font-size: 4rem;
+              }
             }
 
           }
