@@ -6,9 +6,6 @@ html {
   padding: 0px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-
-
-
 }
 
 //Animations
@@ -325,8 +322,8 @@ body {
   width: 100vw;
   background-color: #f5f4ed;
 
-
   #root {
+
     .nav_desktop {
       display: block;
 
@@ -405,6 +402,7 @@ body {
         li {
           text-align: center;
           opacity: 0;
+          cursor: pointer;
 
 
           a {

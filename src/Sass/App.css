@@ -536,6 +536,7 @@ body #root .nav_mobile ul {
 body #root .nav_mobile ul li {
   text-align: center;
   opacity: 0;
+  cursor: pointer;
 }
 
 body #root .nav_mobile ul li a {
