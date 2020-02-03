@@ -6,7 +6,6 @@ html {
   padding: 0px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 //Animations
@@ -64,6 +63,10 @@ html {
 @keyframes appearPicsHeader {
   0% {
     opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
   }
 
   100% {
@@ -154,7 +157,7 @@ html {
 
   &:after {
     content: "";
-    border-bottom: 3px solid black;
+    border-bottom: 5px solid pink;
     position: absolute;
     top: 3.6rem;
     left: 0rem;
@@ -201,7 +204,7 @@ html {
 }
 
 .pic_effect_one {
-  animation: picOnMove 20s linear infinite;
+  animation: picOnMove 20s linear infinite, appearPicsHeader 1s infinite;
 }
 
 .pic_effect_two {
@@ -588,7 +591,6 @@ body {
         height: 5rem;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 2rem;
       }
 
       .container_cart {
@@ -620,7 +622,8 @@ body {
 
             .menus {
               margin-top: 2.5rem;
-
+              margin-right: 0.5rem;
+              margin-left: 0.5rem;
 
               div {
                 margin-top: 2rem;
@@ -747,13 +750,16 @@ body {
       margin-right: auto;
       position: relative;
       border: 1px solid #f5f4ed;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+
+
 
       .title_contact {
 
         position: absolute;
         top: 0px;
+        width: 20rem;
         left: 0px;
         right: 0px;
         margin-left: auto;

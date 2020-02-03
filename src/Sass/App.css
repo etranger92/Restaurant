@@ -4,6 +4,7 @@ html {
   padding: 0px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 @-webkit-keyframes picOnMove {
@@ -102,9 +103,6 @@ html {
   0% {
     opacity: 0;
   }
-  60% {
-    opacity: 1;
-  }
   100% {
     opacity: 1;
   }
@@ -113,9 +111,6 @@ html {
 @keyframes appearPicsHeader {
   0% {
     opacity: 0;
-  }
-  60% {
-    opacity: 1;
   }
   100% {
     opacity: 1;
@@ -253,7 +248,7 @@ html {
 
 .appear_title:after {
   content: "";
-  border-bottom: 5px solid pink;
+  border-bottom: 3px solid black;
   position: absolute;
   top: 3.6rem;
   left: 0rem;
@@ -307,8 +302,8 @@ html {
 }
 
 .pic_effect_one {
-  -webkit-animation: picOnMove 20s linear infinite, appearPicsHeader 5s infinite;
-          animation: picOnMove 20s linear infinite, appearPicsHeader 5s infinite;
+  -webkit-animation: picOnMove 20s linear infinite;
+          animation: picOnMove 20s linear infinite;
 }
 
 .pic_effect_two {
@@ -760,6 +755,7 @@ body #root #Menus .menu_title {
   height: 5rem;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2rem;
 }
 
 body #root #Menus .container_cart .cart {
@@ -796,8 +792,6 @@ body #root #Menus .container_cart .cart .container h1 {
 
 body #root #Menus .container_cart .cart .container .menus {
   margin-top: 2.5rem;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
 }
 
 body #root #Menus .container_cart .cart .container .menus div {
@@ -929,14 +923,13 @@ body #root .contact {
   margin-right: auto;
   position: relative;
   border: 1px solid #f5f4ed;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 body #root .contact .title_contact {
   position: absolute;
   top: 0px;
-  width: 20rem;
   left: 0px;
   right: 0px;
   margin-left: auto;
