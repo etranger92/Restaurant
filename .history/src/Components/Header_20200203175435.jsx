@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+import "../Sass/App.scss";
 import picture1 from "../images/Headers/picture1.jpeg";
 import picture2 from "../images/Headers/picture2.jpg";
 import picture3 from "../images/Headers/picture3.jpeg";
@@ -56,7 +57,8 @@ class Header extends Component {
   selectPicture = id => {
     clearInterval(this.state.interval);
     this.setState({
-      indice: id
+      indice: id,
+      indiceOpacity: true
     });
   };
   componentDidMount() {

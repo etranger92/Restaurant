@@ -40,7 +40,8 @@ class About extends Component {
       : false;
 
     var screenPosition = window.innerHeight / 1.2;
-    if (positionTitle < screenPosition) {
+
+    if (positionTitle && positionTitle < screenPosition) {
       this.setState({
         classIndice: true
       });
@@ -59,6 +60,7 @@ class About extends Component {
   }
   pictureBack = () => {
     var restaurantLength = this.state.restaurant.length;
+
     if (this.state.indice > 0) {
       this.setState({
         indice: this.state.indice - 1

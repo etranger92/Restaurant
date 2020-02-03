@@ -1,5 +1,7 @@
 import React from "react";
 import { Component } from "react";
+import { connect } from "react-redux";
+import "../Sass/App.scss";
 import picture1 from "../images/Headers/picture1.jpeg";
 import picture2 from "../images/Headers/picture2.jpg";
 import picture3 from "../images/Headers/picture3.jpeg";
@@ -40,6 +42,7 @@ class Header extends Component {
       ]
     };
   }
+
   changeIndice = () => {
     let { indice, presentations } = this.state;
     indice++;
@@ -53,12 +56,15 @@ class Header extends Component {
       });
     }
   };
+
   selectPicture = id => {
     clearInterval(this.state.interval);
     this.setState({
-      indice: id
+      indice: id,
+      indiceOpacity: true
     });
   };
+
   componentDidMount() {
     var interVal = setInterval(this.changeIndice, 5000);
     this.setState({
@@ -75,10 +81,15 @@ class Header extends Component {
       <header>
         <div className="headerSlider">
           <img
-            className={"pic_effect_one"}
+            className={
+              "pic_effect_one" +
+              " " +
+              (this.state.indiceOpacity ? "pic_effect_two" : "")
+            }
             src={this.state.presentations[indice].img}
             alt={this.state.presentations[indice].alt}
           />
+
           <div>
             <h5> {this.state.presentations[indice].text}</h5>
             <ul className={"iconeSliderHeader"}>
@@ -100,5 +111,13 @@ class Header extends Component {
     );
   }
 }
+// Qui te permet de recuperer tes données
 
-export default Header;
+// I did not use redux as I had some trouble with imgs. Because picture1 was not imported, it was compulsory to write it as a string. And here, it does not work when you want to refere it. So, I did not want to bother that much with it as my main point was to know how to set up redux.
+const mapStateToProps = state => {
+  return {
+    images: state.imageHeader
+  };
+};
+//La connection qui te permet d'avoir acces a ton store
+export default connect(mapStateToProps)(Header);

@@ -56,7 +56,8 @@ class Header extends Component {
   selectPicture = id => {
     clearInterval(this.state.interval);
     this.setState({
-      indice: id
+      indice: id,
+      indiceOpacity: true
     });
   };
   componentDidMount() {

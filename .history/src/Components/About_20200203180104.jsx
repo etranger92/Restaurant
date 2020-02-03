@@ -40,6 +40,7 @@ class About extends Component {
       : false;
 
     var screenPosition = window.innerHeight / 1.2;
+
     if (positionTitle < screenPosition) {
       this.setState({
         classIndice: true

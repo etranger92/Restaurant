@@ -1,5 +1,7 @@
 import React from "react";
 import { Component } from "react";
+import { connect } from "react-redux";
+import "../Sass/App.scss";
 import picture1 from "../images/Headers/picture1.jpeg";
 import picture2 from "../images/Headers/picture2.jpg";
 import picture3 from "../images/Headers/picture3.jpeg";
@@ -56,7 +58,8 @@ class Header extends Component {
   selectPicture = id => {
     clearInterval(this.state.interval);
     this.setState({
-      indice: id
+      indice: id,
+      indiceOpacity: true
     });
   };
   componentDidMount() {
@@ -101,4 +104,10 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    images: state.imageHeader
+  };
+};
+//La connection qui te permet d'avoir acces a ton store
+export default connect(mapStateToProps)(Header);
