@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Component } from "react";
+
 class Menus extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +25,7 @@ class Menus extends Component {
 
   handleScroll = () => {
     var screenPosition = window.innerHeight;
+
     var menu1 = this.meal1.current;
     var position1 = menu1 ? menu1.getBoundingClientRect().top : "0";
 

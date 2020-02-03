@@ -625,9 +625,8 @@ body #root .about_section .about {
           align-items: center;
   display: flex;
   background-color: #f5f4ed;
-  width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 body #root .about_section .about div {
@@ -760,6 +759,8 @@ body #root #Menus .menu_title {
 
 body #root #Menus .container_cart .cart {
   background-color: #f5f4ed;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 body #root #Menus .container_cart .cart .container {
@@ -923,8 +924,8 @@ body #root .contact {
   margin-right: auto;
   position: relative;
   border: 1px solid #f5f4ed;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 body #root .contact .title_contact {
@@ -958,7 +959,7 @@ body #root .contact .contact_details {
   justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 7rem;
+  margin-top: 5rem;
   margin-left: auto;
   margin-right: auto;
 }
