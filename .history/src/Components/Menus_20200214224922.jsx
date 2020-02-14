@@ -282,7 +282,7 @@ class Menus extends Component {
               className={
                 "container" +
                 " " +
-                (this.state.ID3 === "menu-part3" ? "menu_effect" : " ")
+                (this.state.ID3 == "menu-part3" ? "menu_effect" : " ")
               }
             >
               <h1> COFFEES </h1>
@@ -374,7 +374,7 @@ class Menus extends Component {
               className={
                 "container" +
                 " " +
-                (this.state.ID4 === "menu-part4" ? "menu_effect" : " ")
+                (this.state.ID4 == "menu-part4" ? "menu_effect" : " ")
               }
             >
               <h1> ICE CREAM</h1>

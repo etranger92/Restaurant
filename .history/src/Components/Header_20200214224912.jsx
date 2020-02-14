@@ -86,7 +86,7 @@ class Header extends Component {
                 <li
                   key={item.id}
                   style={
-                    item.id == indice ? { color: "pink" } : { color: "white" }
+                    item.id === indice ? { color: "pink" } : { color: "white" }
                   }
                   onClick={() => this.selectPicture(item.id)}
                 >
